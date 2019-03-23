@@ -1,0 +1,10 @@
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price,emp_id) values ('903-914-210-949', '10/3/2018', '5/18/2018', 'Bangalore', 9.7, 27039.33, '43-7347830');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price, emp_id) values ('814-435-508-082', '6/27/2018', '5/28/2018', 'Mangalore', 6.0, 75463.67, '59-9023249');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price, emp_id) values ('964-834-033-770', '4/2/2018', '4/27/2018', 'Mumbai', 7.6, 10824.15, '20-5237415');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price,emp_id) values ('028-561-923-279', '2/18/2019', '6/21/2018', 'Delhi', 9.1, 36600.65 ,'51-0014482');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price,emp_id) values ('654-106-678-903', '6/13/2018', '10/2/2018', 'Surat', 2.7, 15820.45, '32-0838341');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price,emp_id) values ('303-414-210-949', '0000-00-00', '0000-00-00', 'Ahmadabad', 9.7, 27039.33, '43-7347830');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price, emp_id) values ('514-535-508-082', '0000-00-00', '0000-00-00', 'Koci', 6.0, 75463.67, '59-9023249');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price, emp_id) values ('764-634-033-770', '0000-00-00', '0000-00-00', 'Chennai', 7.6, 10824.15, '20-5237415');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price,emp_id) values ('128-761-923-279', '0000-00-00', '0000-00-00', 'Hyderabad', 9.1, 36600.65 ,'51-0014482');
+insert into PACKAGE (package_id, start_date, return_date, city, rating, price,emp_id) values ('254-806-678-903', '0000-00-00', '0000-00-00', 'Pune', 2.7, 15820.45, '32-0838341');

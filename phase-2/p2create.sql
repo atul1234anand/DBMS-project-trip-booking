@@ -1,0 +1,99 @@
+
+create database tripplanner;
+
+
+
+
+
+CREATE TABLE 	ADMINISTRATOR
+(	Id_number VARCHAR(15) NOT NULL,
+	Name VARCHAR(30) NOT NULL,
+	User_name VARCHAR(15) NOT NULL,
+	Pwd VARCHAR(30) NOT NULL,
+	Gender CHAR ,
+	Address VARCHAR(75) ,
+	Phone_number VARCHAR(10) NOT NULL,
+	PRIMARY KEY (Id_number),
+	UNIQUE (User_name));
+
+CREATE TABLE 	EMPLOYEE
+(	Id_number VARCHAR(15) NOT NULL,
+	Name VARCHAR(30) NOT NULL,
+	User_name VARCHAR(15) NOT NULL,
+	Pwd VARCHAR(30) NOT NULL,
+	Salary REAL NOT NULL,
+	Gender CHAR ,
+	Address VARCHAR(75) ,
+	Phone_number VARCHAR(10) NOT NULL,
+	Admin_id VARCHAR(15) NOT NULL,
+	PRIMARY KEY (Id_number),
+	FOREIGN KEY (Admin_id) REFERENCES ADMINISTRATOR(Id_number));
+	
+CREATE TABLE PACKAGE
+(	Package_id VARCHAR(15) NOT NULL,
+	Start_date DATE NOT NULL,
+	Return_date DATE NOT NULL,
+	City VARCHAR(30) NOT NULL,
+	Rating INT ,
+	Price REAL NOT NULL,
+	Emp_id VARCHAR(15) NOT NULL,
+	PRIMARY KEY (Package_id),
+	FOREIGN KEY (Emp_id) REFERENCES EMPLOYEE(Id_number));
+
+CREATE TABLE HOTEL
+(	Hotel_id VARCHAR(15) NOT NULL,
+	Hotel_name VARCHAR(30) NOT NULL,
+	Rating INT ,
+	Description VARCHAR(100) NOT NULL,
+	Price REAL NOT NULL,
+	No_rooms INT NOT NULL,
+	City VARCHAR(30) NOT NULL,
+	Emp_id VARCHAR(15) NOT NULL,
+	PRIMARY KEY (Hotel_id),
+	FOREIGN KEY (Emp_id) REFERENCES EMPLOYEE(Id_number));
+
+CREATE TABLE 	FLIGHT
+(	Flight_id VARCHAR(15) NOT NULL,
+	Airlines_name VARCHAR(30) NOT NULL,
+	Dept_City VARCHAR(30) NOT NULL,
+	Arrival_City VARCHAR(30) NOT NULL,
+	Dept_Date DATE ,
+	Return_Date DATE ,
+	Price REAL NOT NULL,
+	Emp_id VARCHAR(15) NOT NULL,
+	PRIMARY KEY (Flight_id),
+	FOREIGN KEY (Emp_id) REFERENCES EMPLOYEE(Id_number));
+
+CREATE TABLE 	CUSTOMER
+(	Customer_id VARCHAR(15) NOT NULL,
+	First_name VARCHAR(30) NOT NULL,
+	Last_name VARCHAR(30) ,
+	User_name VARCHAR(15) NOT NULL,
+	Pwd VARCHAR(30) NOT NULL,
+	Gender CHAR ,
+	Phone_number VARCHAR(10) ,
+	PRIMARY KEY (Customer_id));
+
+CREATE TABLE	RESERVATION
+(	Reservation_id VARCHAR(15) NOT NULL,
+	Customer_id VARCHAR(15) NOT NULL,
+	Package_id VARCHAR(15) NOT NULL,
+	Hotel_id VARCHAR(15) NOT NULL,
+	Flight_id VARCHAR(15) NOT NULL,
+	PRIMARY KEY (Reservation_id),
+	FOREIGN KEY (Customer_id) REFERENCES CUSTOMER(Customer_id),
+	FOREIGN KEY (Package_id) REFERENCES PACKAGE(Package_id),
+	FOREIGN KEY (Flight_id) REFERENCES FLIGHT(Flight_id));
+
+CREATE TABLE	QUALIFICATION
+(	Employee_id VARCHAR(15) NOT NULL,
+	Qualification VARCHAR(30) NOT NULL,
+	PRIMARY KEY (Employee_id,Qualification),
+	FOREIGN KEY (Employee_id) REFERENCES EMPLOYEE(Id_number));
+
+CREATE TABLE	EVENTS
+(	Package_id VARCHAR(15) NOT NULL,
+	Event_name VARCHAR(30) NOT NULL,
+	PRIMARY KEY (Package_id,Event_name),
+	FOREIGN KEY (Package_id) REFERENCES PACKAGE(Package_id));
+
